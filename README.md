@@ -45,3 +45,17 @@ eslint 只检查代码规范，prettier 检查代码风格
 新建 `.commitlintrc.js` 文件
 
 `npx husky add .husky/commit-msg "npx --no-install commitlint -e $HUSKY_GIT_PARAMS"` 将 commitlint 集成到 husky 中
+
+### ts 配置
+
+新建 `tsconfig.json` 关注其中 baseUrl ， 它指的是 ts 基础入口
+
+### 打包工具
+
+比较不同打包工具的区别 参考资料： [Overview | Tooling.Report](https://bundlers.tooling.report/)
+
+我们只开发一个库，而不是业务项目。
+希望工具能够尽可能简洁，打包产物可读性高
+原生支持 ESM
+
+所以选择 rollup `pnpm i -D -w rollup`，然后新建 `scripts/rollup` 用来存放 rollup 配置
